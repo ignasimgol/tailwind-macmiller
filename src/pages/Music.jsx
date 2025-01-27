@@ -95,40 +95,43 @@ function Card({ song }) {
     const { link, image, title, author } = song;
     
     return (
-        <div
-          className="min-w-[250px] h-[350px] relative group transition-transform duration-300"
-          onClick={() => link && window.open(link, "_blank")}
-          style={{ cursor: link ? "pointer" : "default" }}
-        >
-          {/* Album cover */}
-          <div className="w-full h-[70%] rounded-lg overflow-hidden relative">
-            <img
-              src={image}
-              alt={title || 'Album cover'}
-              className="w-full h-full object-cover rounded-lg"
-              draggable="false"
-            />
-          </div>
-          
-          {/* CD/Vinyl with sliding animation */}
-          <div className="absolute top-[25%] left-1/2 w-[200px] h-[200px] -translate-x-1/2 transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-16">
-            <img
-              src="/img/vinyl.png"
-              alt="Vinyl"
-              className="w-full h-full object-contain"
-              draggable="false"
-              style={{
-                filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
-              }}
-            />
-          </div>
-    
-          {/* Title and author */}
-          <div className="text-center mt-2">
-            <h3 className="font-bold">{title || 'Untitled'}</h3>
-            <p className="text-sm text-gray-500">{author || 'Unknown Artist'}</p>
-          </div>
+        <div className="justify-end">
+            <div
+            className="min-w-[250px] h-[350px] relative group transition-transform duration-300"
+            onClick={() => link && window.open(link, "_blank")}
+            style={{ cursor: link ? "pointer" : "default" }}
+            >
+            {/* Album cover */}
+            <div className="w-full h-[70%] rounded-lg overflow-hidden relative mt-12">
+                <img
+                src={image}
+                alt={title || 'Album cover'}
+                className="w-full h-full object-cover rounded-lg"
+                draggable="false"
+                />
+            </div>
+            
+            {/* CD/Vinyl with sliding animation */}
+            <div className="absolute top-[5%] left-1/2 w-[200px] h-[200px] -translate-x-1/2 transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 -z-10">
+                <img
+                src="/img/vinyl.png"
+                alt="Vinyl"
+                className="w-full h-full object-contain"
+                draggable="false"
+                style={{
+                    filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
+                }}
+                />
+            </div>
+        
+            {/* Title and author */}
+            <div className="text-center mt-2">
+                <h3 className="font-bold">{title || 'Untitled'}</h3>
+                <p className="text-sm text-gray-500">{author || 'Unknown Artist'}</p>
+            </div>
+            </div>
         </div>
+        
       );
     };
     
