@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 
 const music = [
-  { title: "Canción 1", author: "By Ignasi Muñoz", image: "/img/best-day-ever.png", link: "/song-1" },
-  { title: "Canción 2", author: "By Ignasi Muñoz", image: "/img/blue-slide-park.jpeg", link: "/song-2" },
-  { title: "Canción 3", author: "By Ignasi Muñoz", image: "/img/circles.jpeg", link: "/song-3" },
-  { title: "Canción 4", author: "By Ignasi Muñoz", image: "/img/faces.jpeg", link: "/song-4" },
-  { title: "Canción 5", author: "Próximamente", image: "/img/from-space.jpeg" },
-  { title: "Canción 6", author: "Próximamente", image: "/img/macadelic.jpeg" },
+  { title: "Best Day Ever", author: "2011", image: "/img/best-day-ever.png", link: "/song-1" },
+  { title: "Blue Slide Park", author: "2011", image: "/img/blue-slide-park.jpeg", link: "/song-2" },
+  { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/song-3" },
+  { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/faces" },
+  { title: "From Space", author: "2013", image: "/img/from-space.jpeg" },
+  { title: "Macadelic", author: "2012", image: "/img/macadelic.jpeg" },
 ];
 
 export default function Music() {
@@ -102,11 +102,11 @@ function Card({ song }) {
             style={{ cursor: link ? "pointer" : "default" }}
             >
             {/* Album cover */}
-            <div className="w-full h-[70%] rounded-lg overflow-hidden relative mt-12">
+            <div className="w-full h-[70%] overflow-hidden relative mt-12">
                 <img
                 src={image}
                 alt={title || 'Album cover'}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover"
                 draggable="false"
                 />
             </div>
@@ -127,7 +127,7 @@ function Card({ song }) {
             {/* Title and author */}
             <div className="text-center mt-2">
                 <h3 className="font-bold">{title || 'Untitled'}</h3>
-                <p className="text-sm text-gray-500">{author || 'Unknown Artist'}</p>
+                <p className="text-sm">{author || 'Unknown Artist'}</p>
             </div>
             </div>
         </div>
