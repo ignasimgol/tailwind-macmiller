@@ -10,11 +10,12 @@ const Navbar = () => {
 
   return (
     <nav className="p-4 relative" style={{ backgroundColor: '#E3E5E7' }}>
+      {/* Contenedor del botón de hamburguesa */}
       <div className="container mx-auto flex justify-end items-right">
-        {/* Botón de hamburguesa (más pegado a la derecha en pantallas grandes) */}
+        {/* Botón de hamburguesa (posicionado absolutamente en pantallas grandes) */}
         <button
           onClick={toggleMenu}
-          className="text-black focus:outline-none lg:mr-2"
+          className="text-black focus:outline-none lg:absolute lg:top-4 lg:right-4"
         >
           <svg
             className="w-6 h-6"
