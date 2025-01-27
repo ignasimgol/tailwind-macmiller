@@ -17,20 +17,40 @@ const Navbar = () => {
           onClick={toggleMenu}
           className="text-black focus:outline-none lg:absolute lg:top-4 lg:right-4"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
+          {/* Ícono de hamburguesa o cruz, dependiendo del estado */}
+          {isOpen ? (
+            // Ícono de cruz (X)
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          ) : (
+            // Ícono de hamburguesa
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          )}
         </button>
       </div>
 
@@ -39,7 +59,7 @@ const Navbar = () => {
         className={`${
           isOpen ? 'block' : 'hidden'
         } absolute top-full right-0`}
-        style={{ backgroundColor: '#E3E5E7' }}
+        style={{ backgroundColor: 'transparent' }}
       >
         <ul className="flex flex-col items-end space-y-2 p-4">
           <li>
@@ -62,11 +82,20 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="https://www.youtube.com/channel/UC3SEvBYhullC-aaEmbEQflg"
               className="text-black uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
-              Contacto
+              You Tube
+            </Link>
+            </li>
+            <li>
+            <Link
+              to="https://open.spotify.com/artist/4LLpKhyESsyAXpc4laK94U"
+              className="text-black uppercase hover:text-gray-600 block"
+              onClick={() => setIsOpen(false)}
+            >
+              Spotify
             </Link>
           </li>
         </ul>
