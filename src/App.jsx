@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Faces from './pages/Faces';
@@ -6,21 +6,34 @@ import './App.css';
 import Navbar from './components/Navbar';
 
 const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('dark-mode');
+    return savedMode ? JSON.parse(savedMode) : true;
+  });
+
+  // Aplicar o quitar la clase .dark-mode en el <html> dependiendo del estado
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark-mode');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+    }
+    localStorage.setItem('dark-mode', JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
+
+  // Función para alternar el modo oscuro
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
   return (
     <Router>
-      {/* Navbar fuera de Routes, pero dentro de Router */}
-      <Navbar />
+       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
 
-      {/* Definición de rutas */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faces" element={<Faces />} />
-        {/* Puedes agregar más rutas aquí */}
       </Routes>
     </Router>
   );
 };
 
 export default App;
-
-

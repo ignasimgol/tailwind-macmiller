@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
-#root {
+:root {
   background-color: #E3E5E7;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+:root.dark-mode {
+  background-color: #2463AE;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
 }

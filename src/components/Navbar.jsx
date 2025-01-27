@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ toggleDarkMode, isDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -9,17 +9,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-4 relative" style={{ backgroundColor: '#E3E5E7' }}>
+    <nav className="p-4 relative">
+      {/* Botón de Modo Oscuro */}
+    
+      <button className="text-2xl absolute top-4 left-4" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+          {isDarkMode ? '🌑' : '🌕'}
+        </button>
+
       {/* Contenedor del botón de hamburguesa */}
       <div className="container mx-auto flex justify-end items-right">
-        {/* Botón de hamburguesa (posicionado absolutamente en pantallas grandes) */}
         <button
           onClick={toggleMenu}
-          className="text-black focus:outline-none lg:absolute lg:top-4 lg:right-4"
+          className="focus:outline-none lg:absolute lg:top-4 lg:right-4"
         >
-          {/* Ícono de hamburguesa o cruz, dependiendo del estado */}
           {isOpen ? (
-            // Ícono de cruz (X)
             <svg
               className="w-6 h-6"
               fill="none"
@@ -35,7 +38,6 @@ const Navbar = () => {
               ></path>
             </svg>
           ) : (
-            // Ícono de hamburguesa
             <svg
               className="w-6 h-6"
               fill="none"
@@ -59,13 +61,12 @@ const Navbar = () => {
         className={`${
           isOpen ? 'block' : 'hidden'
         } absolute top-full right-0`}
-        style={{ backgroundColor: 'transparent' }}
       >
         <ul className="flex flex-col items-end space-y-2 p-4">
           <li>
             <Link
               to="/"
-              className="text-black uppercase hover:text-gray-600 block"
+              className="uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
               Inicio
@@ -74,7 +75,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/faces"
-              className="text-black uppercase hover:text-gray-600 block"
+              className="uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
               Faces
@@ -83,16 +84,16 @@ const Navbar = () => {
           <li>
             <Link
               to="https://www.youtube.com/channel/UC3SEvBYhullC-aaEmbEQflg"
-              className="text-black uppercase hover:text-gray-600 block"
+              className="uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
               You Tube
             </Link>
-            </li>
-            <li>
+          </li>
+          <li>
             <Link
               to="https://open.spotify.com/artist/4LLpKhyESsyAXpc4laK94U"
-              className="text-black uppercase hover:text-gray-600 block"
+              className="uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
               Spotify
