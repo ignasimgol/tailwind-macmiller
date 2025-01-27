@@ -12,7 +12,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
     <nav className="p-4 relative">
       {/* Botón de Modo Oscuro */}
     
-      <button className="text-2xl absolute top-4 left-4" onClick={toggleDarkMode} aria-label="Toggle dark mode">
+      <button className="text-2xl absolute top-4 left-4 z-10" onClick={toggleDarkMode} aria-label="Toggle dark mode">
           {isDarkMode ? '🎺' : '🎈'}
         </button>
 

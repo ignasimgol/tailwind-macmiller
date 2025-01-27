@@ -10,7 +10,7 @@ const Faces = () => {
       </div>
 
       <div className="flex-1 max-w-2/5 pl-5">
-        <h1 className="text-red-500 text-2xl mb-4">Faces</h1>
+        <h1 className="text-2xl mb-4">Faces</h1>
         <p className="text-base leading-relaxed">
           Explora nuestro modelo 3D interactivo a la izquierda y conoce más
           sobre sus características. Aquí encontrarás información detallada
