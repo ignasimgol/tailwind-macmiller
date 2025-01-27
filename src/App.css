@@ -4,6 +4,8 @@
   background-color: #E3E5E7;
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 :root.dark-mode {
@@ -13,4 +15,17 @@
 
 body {
   min-height: 100vh;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating-container {
+  animation: rotate 20s linear infinite;
 }

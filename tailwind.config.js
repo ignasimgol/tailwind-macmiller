@@ -1,11 +1,25 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // Asegúrate de que incluya .jsx y .tsx
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // Activa el modo oscuro a través de una clase
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+      },
+      keyframes: {
+        spin: {
+          from: {
+            transform: 'rotate(0deg)',
+          },
+          to: {
+            transform: 'rotate(360deg)',
+          },
+        },
+      },
+    },
   },
   plugins: [],
 }

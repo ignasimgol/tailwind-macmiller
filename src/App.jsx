@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Faces from './pages/Faces';
+import Music from './pages/Music';
 import './App.css';
 import Navbar from './components/Navbar';
 
@@ -30,6 +31,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/music" element={<Music />} />
         <Route path="/faces" element={<Faces />} />
       </Routes>
     </Router>

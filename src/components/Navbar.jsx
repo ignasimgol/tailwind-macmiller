@@ -74,11 +74,11 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
           </li>
           <li>
             <Link
-              to="/faces"
+              to="/music"
               className="uppercase hover:text-gray-600 block"
               onClick={() => setIsOpen(false)}
             >
-              Faces
+              Music
             </Link>
           </li>
           <li>
