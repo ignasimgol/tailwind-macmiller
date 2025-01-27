@@ -1,12 +1,18 @@
 import React, { useEffect, useRef } from "react";
 
 const music = [
-  { title: "Best Day Ever", author: "2011", image: "/img/best-day-ever.png", link: "/song-1" },
-  { title: "Blue Slide Park", author: "2011", image: "/img/blue-slide-park.jpeg", link: "/song-2" },
+  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg" },  
   { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/song-3" },
+  { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/song-3" },
+  { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/song-3" },
+  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/song-3" },
   { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/faces" },
-  { title: "From Space", author: "2013", image: "/img/from-space.jpeg" },
+  { title: "Delusional Thomas", author: "2013", image: "/img/delusional-thomas.jpg", link: "/faces" },
+  { title: "Live From Space", author: "2013", image: "/img/from-space.jpeg" },
   { title: "Macadelic", author: "2012", image: "/img/macadelic.jpeg" },
+  { title: "Blue Slide Park", author: "2011", image: "/img/blue-slide-park.jpeg", link: "/song-2" },
+  { title: "Best Day Ever", author: "2011", image: "/img/best-day-ever.png", link: "/song-1" },
+  { title: "K.I.D.S", author: "2010", image: "/img/kids.jpg", link: "/song-1" },
 ];
 
 export default function Music() {
