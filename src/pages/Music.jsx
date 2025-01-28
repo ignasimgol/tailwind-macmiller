@@ -39,7 +39,16 @@ function CustomCarousel({ children }) {
     // Add mouse wheel support
     const handleWheel = (e) => {
       e.preventDefault();
-      sliderRef.scrollLeft += e.deltaY * 2; // Adjust speed with a multiplier
+      const targetScrollLeft = sliderRef.scrollLeft + e.deltaY * 1;
+    
+      const animateScroll = () => {
+        if (Math.abs(sliderRef.scrollLeft - targetScrollLeft) > 1) {
+          sliderRef.scrollLeft += (targetScrollLeft - sliderRef.scrollLeft) * 0.1;
+          requestAnimationFrame(animateScroll);
+        }
+      };
+    
+      animateScroll();
     };
 
     sliderRef.addEventListener("mousedown", handleMouseDown);
@@ -91,7 +100,7 @@ function CustomCarousel({ children }) {
   }
 
   return (
-    <div className="overflow-hidden cursor-grab" ref={slider}>
+    <div className="overflow-hidden cursor-grab smooth-scroll" ref={slider}>
       <div className="flex gap-4">{children}</div>
     </div>
   );
