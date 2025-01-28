@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 
 const music = [
-  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg" },  
-  { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/song-3" },
-  { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/song-3" },
-  { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/song-3" },
-  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/song-3" },
-  { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/faces" },
+  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg", link: "/music/faces" },  
+  { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/music/faces" },
+  { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/music/faces" },
+  { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/music/faces" },
+  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/music/faces" },
+  { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/music/faces" },
   { title: "Delusional Thomas", author: "2013", image: "/img/delusional-thomas.jpg", link: "/faces" },
   { title: "Live From Space", author: "2013", image: "/img/from-space.jpeg" },
   { title: "Macadelic", author: "2012", image: "/img/macadelic.jpeg" },
@@ -94,46 +94,50 @@ function CustomCarousel({ children }) {
 }
 
 function Card({ song }) {
-    const { link, image, title, author } = song;
-    
-    return (
-        <div className="justify-end">
-            <div
-            className="min-w-[250px] h-[350px] relative group transition-transform duration-300"
-            onClick={() => link && window.open(link, "_blank")}
-            style={{ cursor: link ? "pointer" : "default" }}
-            >
-            {/* Album cover */}
-            <div className="w-full h-[70%] overflow-hidden relative mt-12">
-                <img
-                src={image}
-                alt={title || 'Album cover'}
-                className="w-full h-full object-cover"
-                draggable="false"
-                />
-            </div>
-            
-            {/* CD/Vinyl with sliding animation */}
-            <div className="absolute top-[5%] left-1/2 w-[200px] h-[200px] -translate-x-1/2 transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 -z-10">
-                <img
-                src="/img/vinyl.png"
-                alt="Vinyl"
-                className="w-full h-full object-contain"
-                draggable="false"
-                style={{
-                    filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
-                }}
-                />
-            </div>
-        
-            {/* Title and author */}
-            <div className="text-center mt-2">
-                <h3 className="font-bold">{title || 'Untitled'}</h3>
-                <p className="text-sm">{author || 'Unknown Artist'}</p>
-            </div>
-            </div>
+  const { link, image, title, author } = song;
+
+  const handleClick = () => {
+    if (link) {
+      window.location.href = link;
+    }
+  };
+
+  return (
+    <div className="justify-end">
+      <div
+        className="min-w-[250px] h-[350px] relative group transition-transform duration-300"
+        onClick={handleClick}
+        style={{ cursor: link ? "pointer" : "default" }}
+      >
+        {/* Album cover */}
+        <div className="w-full h-[70%] overflow-hidden relative mt-12">
+          <img
+            src={image}
+            alt={title || 'Album cover'}
+            className="w-full h-full object-cover"
+            draggable="false"
+          />
         </div>
-        
-      );
-    };
-    
+
+        {/* CD/Vinyl with sliding animation */}
+        <div className="absolute top-[5%] left-1/2 w-[200px] h-[200px] -translate-x-1/2 transform transition-all duration-500 ease-out opacity-0 group-hover:opacity-100 group-hover:-translate-y-16 -z-10">
+          <img
+            src="/img/vinyl.png"
+            alt="Vinyl"
+            className="w-full h-full object-contain"
+            draggable="false"
+            style={{
+              filter: "drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))"
+            }}
+          />
+        </div>
+
+        {/* Title and author */}
+        <div className="text-center mt-2">
+          <h3 className="font-bold">{title || 'Untitled'}</h3>
+          <p className="text-sm">{author || 'Unknown Artist'}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
