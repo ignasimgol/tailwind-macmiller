@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 const music = [
-  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg" },  
+  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg", link: "/faces" },  
   { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/song-3" },
   { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/song-3" },
   { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/song-3" },
@@ -51,10 +51,6 @@ function CustomCarousel({ children }) {
       animateScroll();
     };
 
-    sliderRef.addEventListener("mousedown", handleMouseDown);
-    sliderRef.addEventListener("mouseleave", handleMouseLeave);
-    sliderRef.addEventListener("mouseup", handleMouseUp);
-    sliderRef.addEventListener("mousemove", handleMouseMove);
     sliderRef.addEventListener("wheel", handleWheel, { passive: false });
 
     sliderRef.addEventListener("touchstart", handleMouseDown);
@@ -62,10 +58,6 @@ function CustomCarousel({ children }) {
     sliderRef.addEventListener("touchmove", handleMouseMove);
 
     return () => {
-      sliderRef.removeEventListener("mousedown", handleMouseDown);
-      sliderRef.removeEventListener("mouseleave", handleMouseLeave);
-      sliderRef.removeEventListener("mouseup", handleMouseUp);
-      sliderRef.removeEventListener("mousemove", handleMouseMove);
       sliderRef.removeEventListener("wheel", handleWheel);
 
       sliderRef.removeEventListener("touchstart", handleMouseDown);
@@ -113,7 +105,7 @@ function Card({ song }) {
         <div className="justify-end">
             <div
             className="min-w-[250px] h-[350px] relative group transition-transform duration-300"
-            onClick={() => link && window.open(link, "_blank")}
+            onClick={() => link && window.open(link)}
             style={{ cursor: link ? "pointer" : "default" }}
             >
             {/* Album cover */}

@@ -69,7 +69,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
               className="uppercase hover:hover:line-through block"
               onClick={() => setIsOpen(false)}
             >
-              Inicio
+              Home
             </Link>
           </li>
           <li>
@@ -86,6 +86,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
               to="https://www.youtube.com/channel/UC3SEvBYhullC-aaEmbEQflg"
               className="uppercase hover:hover:line-through block"
               onClick={() => setIsOpen(false)}
+              target='_blank'
             >
               You Tube
             </Link>
@@ -95,6 +96,7 @@ const Navbar = ({ toggleDarkMode, isDarkMode }) => {
               to="https://open.spotify.com/artist/4LLpKhyESsyAXpc4laK94U"
               className="uppercase hover:hover:line-through block"
               onClick={() => setIsOpen(false)}
+              target='_blank'
             >
               Spotify
             </Link>
