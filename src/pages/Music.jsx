@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const music = [
   { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg", link: "/music/faces" },  
@@ -95,13 +96,13 @@ function CustomCarousel({ children }) {
 
 function Card({ song }) {
   const { link, image, title, author } = song;
+  const navigate = useNavigate();
 
   const handleClick = () => {
     if (link) {
-      window.location.href = link;
+      navigate(link); // Usar navigate en lugar de window.location.href
     }
   };
-
   return (
     <div className="justify-end">
       <div
