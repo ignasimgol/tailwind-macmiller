@@ -8,17 +8,7 @@
   overflow: hidden;
 }
 
-.faces-page {
-  /* Por defecto, no permitir scroll en desktop */
-  overflow: hidden;
-}
 
-/* Permitir scroll solo en móviles y tablets */
-@media (max-width: 1023px) {
-  .faces-page {
-    overflow: auto;
-  }
-}
 :root.dark-mode {
   background-color: #2463AE;
   color: white;
