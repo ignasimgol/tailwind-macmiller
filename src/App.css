@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  background-color: #FFFFFA;
+  background-color: #fcf7f8;
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
   box-sizing: border-box;
