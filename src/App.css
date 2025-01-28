@@ -29,3 +29,19 @@ body {
 .rotating-container {
   animation: rotate 20s linear infinite;
 }
+
+/* Scrollbar solo para navegadores basados en WebKit (Chrome, Edge, Safari) */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Grosor */
+
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563; /* Color del "pulgar" */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937; /* Color del fondo */
+}
