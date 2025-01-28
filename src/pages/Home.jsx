@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState} from "react";
 import { Link } from 'react-router-dom';
 import { gsap } from "gsap";
 
 const Home = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  
   // Referencias para las imágenes
   const face1Ref = useRef(null);
   const face2Ref = useRef(null);
