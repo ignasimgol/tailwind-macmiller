@@ -6,7 +6,7 @@ import '../App.css';
 
 const Faces = () => {
   return (
-    <div className="relative h-screen p-5">
+    <div className="faces-page relative h-screen p-5">
       {/* Colocamos el botón de retroceso en la parte superior izquierda */}
       <div className="absolute top-20 left-14 z-10">
         <BackButton />
@@ -26,5 +26,3 @@ const Faces = () => {
 };
 
 export default Faces;
-
-
