@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../components/BackButton";
 
 const music = [
   { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg", link: "/music/faces" },  
@@ -18,6 +19,11 @@ const music = [
 
 export default function Music() {
   return (
+  <div className="relative h-screen p-5">
+    {/* Colocamos el botón de retroceso en la parte superior izquierda */}
+    <div className="absolute top-20 left-14 z-10">
+      <BackButton />
+    </div>
     <div className="px-5 py-10 mt-50">
       <CustomCarousel>
         {music.map((song, index) => {
@@ -25,6 +31,7 @@ export default function Music() {
         })}
       </CustomCarousel>
     </div>
+  </div>
   );
 }
 
