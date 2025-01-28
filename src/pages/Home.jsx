@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from 'react-router-dom';
 import { gsap } from "gsap";
 
 const Home = () => {
@@ -67,7 +68,15 @@ const Home = () => {
       ))}
 
       {/* Title */}
-      <h1 className="mt-6 text-4xl font-bold hover:hover:line-through"><a href="/music">MAC MILLER</a></h1>
+      <h1 className="mt-6 text-4xl font-bold hover:hover:line-through">
+        <Link
+          to="/music"
+          className="uppercase hover:hover:line-through block"
+          onClick={() => setIsOpen(false)}
+        >
+          Mac Miller
+        </Link>
+      </h1>
     </div>
   );
 };
