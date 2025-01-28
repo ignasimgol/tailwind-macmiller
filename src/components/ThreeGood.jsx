@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 function BasketballScene() {
-  const { scene } = useGLTF("/assets/faces-comp.glb", true, (loader) => {
+  const { scene } = useGLTF("/assets/good-am-comp.glb", true, (loader) => {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("/draco/"); // Ruta a los archivos de decodificación de DRACO
     loader.setDRACOLoader(dracoLoader);
@@ -25,7 +25,7 @@ export default function ThreeCanvas() {
         }}
       >
         {/* Luces y controles dentro del Canvas */}
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={1} />
         <directionalLight position={[5, 10, 5]} intensity={0.7} castShadow />
         <pointLight position={[0, 5, 0]} intensity={1.0} color="white" />
         <spotLight position={[2, 5, 3]} angle={0.3} intensity={1.2} castShadow />

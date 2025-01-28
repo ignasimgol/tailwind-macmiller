@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 const music = [
-  { title: "Balloonerism", author: "2025", image: "/img/ballonerism.jpeg", link: "/music/faces" },  
+  { title: "Balloonerism", author: "2025", image: "/img/balloonerism.jpg", link: "/music/faces" },  
   { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/music/faces" },
-  { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/music/faces" },
+  { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/music/swimming" },
   { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/music/faces" },
-  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/music/faces" },
+  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/music/good" },
   { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/music/faces" },
   { title: "Delusional Thomas", author: "2013", image: "/img/delusional-thomas.jpg", link: "/faces" },
   { title: "Live From Space", author: "2013", image: "/img/from-space.jpeg" },

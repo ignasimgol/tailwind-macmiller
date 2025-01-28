@@ -4,7 +4,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 function BasketballScene() {
-  const { scene } = useGLTF("/assets/faces-comp.glb", true, (loader) => {
+  const { scene } = useGLTF("/assets/swimming-comp.glb", true, (loader) => {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath("/draco/"); // Ruta a los archivos de decodificación de DRACO
     loader.setDRACOLoader(dracoLoader);
