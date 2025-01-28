@@ -5,17 +5,17 @@ import '../App.css';
 
 const Faces = () => {
   return (
-    <div className="flex justify-between items-center h-screen p-5">
-      <div className="flex-1 max-w-3/5">
+    <div className="flex flex-col lg:flex-row justify-between items-center h-screen p-5">
+      <div className="flex-1 w-full lg:max-w-3/5">
         <Three />
       </div>
 
-      <div className="flex-1 max-w-2/5 pl-5">
-        <h1 className="text-2xl mb-4">Faces</h1>
-        <Songs />
+      <div className="flex-1 w-full lg:max-w-2/5 lg:pl-5">
+        <Songs albumId={1} />
       </div>
     </div>
   );
 };
 
 export default Faces;
+

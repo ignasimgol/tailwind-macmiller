@@ -1,28 +1,25 @@
 import React from "react";
-import { Play } from "lucide-react"; // Usa lucide-react para iconos
+import { Play } from "lucide-react";
+import songsData from "../assets/songs.json"; // Importa el JSON
 
-const songs = [
-  { id: 1, title: "The Spins", duration: "3:15", spotifyUrl: "https://open.spotify.com/track/1" },
-  { id: 2, title: "5 Dollar Pony Rides", duration: "3:42", spotifyUrl: "https://open.spotify.com/track/2" },
-  { id: 3, title: "Congratulations (feat. Bilal)", duration: "4:16", spotifyUrl: "https://open.spotify.com/track/3" },
-  { id: 4, title: "Love Lost", duration: "2:42", spotifyUrl: "https://open.spotify.com/track/4" },
-  { id: 5, title: "Funny Papers", duration: "4:23", spotifyUrl: "https://open.spotify.com/track/5" },
-  { id: 6, title: "The Spins", duration: "3:15", spotifyUrl: "https://open.spotify.com/track/1" },
-  { id: 7, title: "5 Dollar Pony Rides", duration: "3:42", spotifyUrl: "https://open.spotify.com/track/2" },
-  { id: 8, title: "Congratulations (feat. Bilal)", duration: "4:16", spotifyUrl: "https://open.spotify.com/track/3" },
-  { id: 9, title: "Love Lost", duration: "2:42", spotifyUrl: "https://open.spotify.com/track/4" },
-  { id: 10, title: "Funny Papers", duration: "4:23", spotifyUrl: "https://open.spotify.com/track/5" }
-];
+const Songs = ({ albumId }) => {
+  // Filtra las canciones por albumId
+  const album = songsData.find((album) => album.albumId === albumId);
 
-const Songs = () => {
+  if (!album) return <p className="text-white">Álbum no encontrado</p>;
+
   return (
-    <div className="bg-black text-white p-6 max-w-lg mx-auto rounded-lg">
-      <div className="max-h-80 overflow-y-auto custom-scrollbar pr-4"> {/* Contenedor con scroll */}
-        <ul className="space-y-4">
-          {songs.map((song) => (
-            <li key={song.id} className="flex justify-between items-center border-b border-gray-700 pb-2">
+    <div className="bg-black text-white p-6 max-w-md w-full mx-auto rounded-lg shadow-lg">
+      <h2 className="text-lg font-bold mb-4 text-center md:text-left">{album.albumName}</h2>
+      <div className="max-h-80 overflow-y-auto custom-scrollbar pr-2 sm:pr-4">
+        <ul className="space-y-3">
+          {album.songs.map((song) => (
+            <li 
+              key={song.id} 
+              className="flex flex-wrap justify-between items-center border-b border-gray-700 pb-2 gap-3"
+            >
               <span className="text-gray-400">{song.id}</span>
-              <span className="flex-1 px-4">{song.title}</span>
+              <span className="flex-1 px-2 sm:px-4 truncate">{song.title}</span>
               <span className="text-gray-400">{song.duration}</span>
               <a 
                 href={song.spotifyUrl} 
@@ -41,4 +38,5 @@ const Songs = () => {
 };
 
 export default Songs;
+
 
