@@ -21,7 +21,7 @@ export default function Music() {
   return (
   <div className="relative h-screen p-5">
     {/* Colocamos el botón de retroceso en la parte superior izquierda */}
-    <div className="absolute top-20 left-14 z-10">
+    <div className="absolute top-12 left-4 z-10">
       <BackButton />
     </div>
     <div className="px-5 py-10 mt-50">

@@ -40,8 +40,8 @@ const Home = () => {
       float wave = sin(distance * 10.0 - u_time * 2.0 + mouseDistance * 5.0) * 0.5 + 0.5;
       
       vec3 baseColor = mix(
-        vec3(0.2, 0.5, 0.8),
-        vec3(0.8, 0.3, 0.2),
+        vec3(0.988, 0.969, 0.973),  
+        vec3(0.141, 0.388, 0.682),
         smoothstep(0.0, 1.0, u_mouse.x)
       );
       
@@ -51,7 +51,7 @@ const Home = () => {
                      (1.0 - mouseDistance);
       
       vec3 color = mix(baseColor, vec3(pattern), wave);
-      color *= (1.0 - distance * 0.5);
+      color *= (1.0 - distance * 0.1);
       
       gl_FragColor = vec4(color, 1.0);
     }
