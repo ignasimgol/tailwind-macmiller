@@ -4,15 +4,15 @@ import BackButton from "../components/BackButton";
 
 const music = [
   { title: "Balloonerism", author: "2025", image: "/img/balloonerism.jpg", link: "/music/good" },  
-  { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/under-construction" },
   { title: "Swimming", author: "2018", image: "/img/swimming.jpeg", link: "/music/swimming" },
-  { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/under-construction" },
-  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/music/good" },
   { title: "Faces", author: "2014", image: "/img/faces.jpeg", link: "/music/faces" },
-  { title: "Delusional Thomas", author: "2013", image: "/img/delusional-thomas.jpg", link: "/faces" },
-  { title: "Live From Space", author: "2013", image: "/img/from-space.jpeg" },
-  { title: "Macadelic", author: "2012", image: "/img/macadelic.jpeg" },
-  { title: "Blue Slide Park", author: "2011", image: "/img/blue-slide-park.jpeg", link: "/song-2" },
+  { title: "Circles", author: "2020", image: "/img/circles.jpeg", link: "/under-construction" },
+  { title: "The Divine Fem", author: "2016", image: "/img/the-divine-femenine.jpeg", link: "/under-construction" },
+  { title: "GO:OD AM", author: "2015", image: "/img/good-am.jpeg", link: "/under-construction" },
+  { title: "Delusional Thomas", author: "2013", image: "/img/delusional-thomas.jpg", link: "/under-construction" },
+  { title: "Live From Space", author: "2013", image: "/img/from-space.jpeg", link: "/under-construction" },
+  { title: "Macadelic", author: "2012", image: "/img/macadelic.jpeg", link: "/under-construction" },
+  { title: "Blue Slide Park", author: "2011", image: "/img/blue-slide-park.jpeg", link: "/under-construction" },
   { title: "Best Day Ever", author: "2011", image: "/img/best-day-ever.png", link: "/under-construction" },
   { title: "K.I.D.S", author: "2010", image: "/img/kids.jpg", link: "/under-construction" },
 ];
