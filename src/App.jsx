@@ -5,6 +5,7 @@ import Faces from './pages/Faces';
 import Swimming from './pages/Swimming';
 import Good from './pages/Good';
 import Music from './pages/Music';
+import UnderConstruction from './pages/UnderConstruction';
 import './App.css';
 import Navbar from './components/Navbar';
 
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/music/faces" element={<Faces />} />
         <Route path="/music/swimming" element={<Swimming />} />
         <Route path="/music/good" element={<Good />} />
+        <Route path="/under-construction" element={<UnderConstruction />} />
       </Routes>
     </Router>
   );
